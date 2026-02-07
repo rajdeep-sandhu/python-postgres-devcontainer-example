@@ -1,7 +1,7 @@
 [project]
 name = "python-postgres-devcontainer-example"
 version = "0.1.0"
-description = "Add your description here"
+description = "Example setup for a Python PostgreSQL DevContainer project."
 readme = "README.md"
 authors = [
     { name = "Rajdeep Sandhu", email = "168480080+rajdeep-sandhu@users.noreply.github.com" }
