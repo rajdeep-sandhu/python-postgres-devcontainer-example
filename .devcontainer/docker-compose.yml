@@ -3,10 +3,8 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
-    # Use env_file: as test
-    env_file:
-      - .env.example
     # Use environment: to use variables defined by CodeSpaces secrets.
+    # .env will be used implicitly if these are not provided.
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -29,10 +27,8 @@ services:
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql
-    # Use env_file: as test
-    env_file:
-      - .env.example
     # Use environment: to use variables defined by CodeSpaces secrets.
+    # .env will be used implicitly if these are not provided.
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
