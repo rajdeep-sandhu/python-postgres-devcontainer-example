@@ -7,7 +7,9 @@ authors = [
     { name = "Rajdeep Sandhu", email = "168480080+rajdeep-sandhu@users.noreply.github.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "psycopg[binary]>=3.3.2",
+]
 
 [project.scripts]
 python-postgres-devcontainer-example = "python_postgres_devcontainer_example:main"
