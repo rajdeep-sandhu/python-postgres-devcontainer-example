@@ -11,6 +11,7 @@
     - If not, `environment:` uses variables available from the environment. This enables using CodeSpace secrets.
       - These are set up via **Repository | Settings | Secrets and variables**
     - `env_file:` is not specified because, if an actual `.env` file is not present in the ropository, the container build will crash with a file not found error. In this case, it does not automatically default to `environment:`.
+    - Mount the volume at `/var/lib/postgresql` for PostgreSQL 18, not of `/var/lib/postgresql/data` (previous versions).
 
 ## Caveats
 
