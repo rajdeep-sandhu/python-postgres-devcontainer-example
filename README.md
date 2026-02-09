@@ -4,3 +4,10 @@
 
 - `devcontiainer.json`
   - Refers to `docker-compose.yml` instead of an image.
+- `docker-compose.yml`
+  - The environment variables are made available to both the `app` and the `db` services.
+  - Use a local `.env` file which should not be committed. (See `,env.example`).
+    - Environment variables are imported implicitly from it, if this is available.
+    - If not, `environment:` uses variables available from the environment. This enables using CodeSpace secrets.
+      - These are set up via **Repository | Settings | Secrets and variables**
+    - `env_file:` is not specified because, if an actual `.env` file is not present in the ropository, the container build will crash with a file not found error. In this case, it does not automatically default to `environment:`.
