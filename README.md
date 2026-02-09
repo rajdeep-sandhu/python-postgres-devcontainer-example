@@ -12,6 +12,22 @@
       - These are set up via **Repository | Settings | Secrets and variables**
     - `env_file:` is not specified because, if an actual `.env` file is not present in the ropository, the container build will crash with a file not found error. In this case, it does not automatically default to `environment:`.
     - Mount the volume at `/var/lib/postgresql` for PostgreSQL 18, not of `/var/lib/postgresql/data` (previous versions).
+  - `Dockerfile`
+    - This uses the base Python 3.13 image.
+    - `psql` and `uv` are installed.
+  
+## `uv` Project setup
+
+- The repository contains a basic `uv` project setup. This can either be deleted or the `.devcontainer` folder copied to a new ropository to build acontainer without a pre-existing `uv` project.
+- Create a new `uv` project in the repository folder.
+  
+  ```bash
+  uv init --project
+
+  uv add <dependency_name>
+
+  uv venv  # or uv sync
+  ```
 
 ## Caveats
 
