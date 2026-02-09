@@ -11,6 +11,8 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// This can be used to network with other containers or the host.
+	// 5000: Conventional application port for the Python image, can be changed if needed.
+	// 5432: PostgreSQL default.
 	"forwardPorts": [5000, 5432]
 
 	// Use 'postCreateCommand' to run commands after the container is created.
