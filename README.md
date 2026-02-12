@@ -10,11 +10,12 @@
     - Environment variables are imported implicitly from it, if this is available.
     - If not, `environment:` uses variables available from the environment. This enables using CodeSpace secrets.
       - These are set up via **Repository | Settings | Secrets and variables**
+    - This allows a dual configuration where the repository can be loaded into VSCode (or other IDE) locally as a DevContainer, as well as in a CodeSpace.
     - `env_file:` is not specified because, if an actual `.env` file is not present in the ropository, the container build will crash with a file not found error. In this case, it does not automatically default to `environment:`.
-    - Mount the volume at `/var/lib/postgresql` for PostgreSQL 18, not of `/var/lib/postgresql/data` (previous versions).
-  - `Dockerfile`
-    - This uses the base Python 3.13 image.
-    - `psql` and `uv` are installed.
+  - Mount the volume at `/var/lib/postgresql` for PostgreSQL 18, not of `/var/lib/postgresql/data` (previous versions).
+- `Dockerfile`
+  - This uses the base Python 3.13 image.
+  - `psql` and `uv` are installed.
   
 ## `uv` Project setup
 
